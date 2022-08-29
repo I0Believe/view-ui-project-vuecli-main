@@ -29,14 +29,20 @@ const config = {
       ]
     }
   },
+  // 关闭语法检查
+  // lintOnSave: false,
   devServer: {
     open: true,
     port: 8080,
     host: 'localhost',
     proxy: {
+      // 可以定义多个域名的请求
+      // 这里是指所有带有api的请求都会使用以下代理
       '/api': {
         target: 'https://localhost:8080',
-        changeOrigin: true
+        changeOrigin: true,
+        // // http://39.98.123.211服务器的地址
+        // target: 'http://39.98.123.211'
       }
     }
   }
